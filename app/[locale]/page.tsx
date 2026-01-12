@@ -65,6 +65,8 @@ export default function Home() {
     },
   ];
 
+  const [showLocationCard, setShowLocationCard] = useState(false);
+
   return (
     <div className="min-h-screen font-sans text-stone-800 bg-amber-50 selection:bg-orange-200 selection:text-orange-900">
       {/* --- NAVIGATION --- */}
@@ -350,28 +352,69 @@ export default function Home() {
         {/* --- MAP / FOOTER --- */}
         <section
           id="location"
-          className="h-[400px] w-full bg-stone-200 relative group"
+          className="h-[100] w-full bg-stone-200 relative group"
         >
           {/* Placeholder for Map */}
-          <div className="absolute inset-0 flex items-center justify-center text-stone-400 bg-stone-100">
+          {/* <div className="absolute inset-0 flex items-center justify-center text-stone-400 bg-stone-100">
             <div className="text-center">
               <MapPin size={48} className="mx-auto mb-2 text-stone-300" />
               <p>Google Map Embed Area</p>
             </div>
-          </div>
+          </div> */}
 
-          <div className="absolute bottom-4 left-4 right-4 md:left-auto md:right-8 md:bottom-8 md:w-80 bg-white p-6 rounded-xl shadow-2xl opacity-90 group-hover:opacity-100 transition-opacity">
-            <h4 className="font-bold text-stone-800 mb-1">
+          {/* =========================================================
+          FLOATING LOCATION WIDGET (Fixed on Desktop, Toggle on Mobile)
+          ========================================================= */}
+
+          {/* 1. Mobile Toggle Button (Hidden on Desktop) */}
+          <button
+            onClick={() => setShowLocationCard(!showLocationCard)}
+            className="md:hidden fixed bottom-6 right-6 z-50 p-4 bg-orange-600 text-white rounded-full shadow-2xl hover:bg-orange-700 transition-all active:scale-95"
+          >
+            {showLocationCard ? <X size={24} /> : <MapPin size={24} />}
+          </button>
+
+          {/* 2. The Location Card */}
+          <div
+            className={`
+          fixed z-40 bg-white p-6 rounded-2xl shadow-2xl border border-stone-100 w-80
+          transition-all duration-300 ease-in-out transform origin-bottom-right
+          
+          /* Positioning */
+          bottom-24 right-6       /* Mobile Position (above button) */
+          md:bottom-8 md:right-8  /* Desktop Position */
+
+          /* Visibility Logic */
+          ${
+            showLocationCard
+              ? "scale-100 opacity-100"
+              : "scale-0 opacity-0 pointer-events-none"
+          } 
+          md:scale-100 md:opacity-100 md:pointer-events-auto
+        `}
+          >
+            {/* Close Button (Mobile Only convenience) */}
+            <button
+              onClick={() => setShowLocationCard(false)}
+              className="md:hidden absolute top-2 right-2 text-stone-400 hover:text-stone-600"
+            >
+              <X size={16} />
+            </button>
+
+            <h4 className="font-bold text-stone-800 mb-1 text-lg">
               NomNoey Dessert & Cafe
             </h4>
             <p className="text-sm text-stone-500 mb-4">
               {tInfo("locationDesc")}
             </p>
+
             <a
-              href="https://maps.app.goo.gl/LprBCQsAfaE48QnLA"
-              className="block w-full py-2 bg-orange-600 text-white text-center rounded-lg font-bold text-sm hover:bg-orange-700 transition"
+              href="https://maps.google.com/?q=NomNoey+Dessert+and+Cafe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full py-2.5 bg-orange-600 text-white text-center rounded-xl font-bold text-sm hover:bg-orange-700 hover:shadow-lg transition-all flex items-center justify-center gap-2"
             >
-              {tFooter("openMap")}
+              <MapPin size={16} /> {tFooter("openMap")}
             </a>
           </div>
         </section>
