@@ -1,0 +1,61 @@
+{
+  "Nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "badge": "OPEN EVERYDAY 10:00 - 20:00",
+    "title": "Welcome to <br /> <span class=\"text-amber-400\">NomNoey</span> Cafe",
+    "subtitle": "Dessert, Drinks & Good Vibes in Lamphun",
+    "viewMenu": "View Menu",
+    "visitUs": "Visit Us"
+  },
+  "Info": {
+    "hoursTitle": "Opening Hours",
+    "days": "Mon - Sun",
+    "time": "10:00 - 20:00",
+    "lastOrder": "Last Order 19:30",
+    "locationTitle": "Location",
+    "locationDesc": "Lamphun, Thailand",
+    "address": "18/9 Thanon Rob Mueang, Tambon Nai Mueang",
+    "getDirections": "Get Directions",
+    "contactTitle": "Contact Us",
+    "call": "Call for reservations"
+  },
+  "Menu": {
+    "badge": "Delicious & Fresh",
+    "title": "Menu Highlights",
+    "fullMenu": "View Full Menu",
+    "items": {
+      "toast": {
+        "title": "Signature Toast",
+        "desc": "Crispy butter toast with premium toppings"
+      },
+      "coffee": {
+        "title": "Fresh Coffee",
+        "desc": "Arabica beans roasted to perfection"
+      },
+      "milk": {
+        "title": "Milk Series",
+        "desc": "Fresh milk with varied flavors"
+      },
+      "appetizer": {
+        "title": "Appetizers",
+        "desc": "French fries, nuggets & more"
+      }
+    }
+  },
+  "Promo": {
+    "title": "Join our Campaign!",
+    "desc": "We participate in the government \"Half-Half\" (Kon-La-Krueng) scheme.",
+    "tag": "#SaveHaYai #KonLaKrueng"
+  },
+  "Footer": {
+    "rights": "NomNoey Dessert & Cafe. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "openMap": "Open in Maps"
+  }
+}
